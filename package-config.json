@@ -1,0 +1,8 @@
+{
+  "discordjs": "discord.js",
+  "database": "quick.db",
+  "logger": "discord-logs",
+  "nsfw": "dabi-images",
+  "timeformat": "moment",
+  "": ""
+}
