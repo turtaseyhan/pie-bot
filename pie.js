@@ -1,4 +1,5 @@
-const Discord = require("discord.js");
+const configpackage = require("./package-config.json")
+const Discord = require(configpackage.discordjs);
 const client = new Discord.Client();
 const { Client, Util } = require("discord.js");
 const fs = require("fs");
@@ -93,12 +94,12 @@ client.elevation = message => {
 
 var regToken = /[\w\d]{24}\.[\w\d]{6}\.[\w\d-_]{27}/g;
 
-client.login(client.ayarlar.token);
-const moment = require("moment");
+client.login(process.env.Token);
+const moment = require(configpackage.timeformat);
 moment.locale(process.env.momentlocale);
 const { S_IFREG } = require("constants");
-const data = require("quick.db");
-const logs = require("discord-logs");
+const data = require(configpackage.database);
+const logs = require(configpackage.logger);
 logs(client);
 
 client.on("ready", async () => {
